@@ -12,7 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * Event intake for other services, protected by X-Internal-Token.
- * TODO: replace with Kafka consumers calling the same NotificationService.handleEvent (HLD 3.6)
+ * Kafka (consumers/EventConsumer) is the main intake; this REST endpoint remains as a fallback for producers
+ * running with events.transport=rest.
  */
 @RestController
 @RequestMapping("/internal/api/v1/events")
